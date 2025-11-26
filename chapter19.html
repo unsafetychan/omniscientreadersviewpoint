@@ -25,7 +25,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .nav {
+    .nav, .chapter-jump {
       margin: 20px;
     }
     .nav a {
@@ -34,9 +34,15 @@
       background: #333;
       padding: 10px 20px;
       border-radius: 6px;
+      margin: 0 5px;
     }
     .nav a:hover {
       background: #555;
+    }
+    .chapter-jump select {
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -48,40 +54,64 @@
   <div>
     <h2>Chapter 19</h2>
 
-<div class="nav">
-    <a href="chapter18.html">⬅ Prev</a>
-    <a href="chapter20.html">Next ➡</a>
-</div>
+    <!-- Prev/Next Navigation -->
+    <div class="nav">
+      <a href="chapter18.html">⬅ Prev</a>
+      <a href="chapter20.html">Next ➡</a>
+    </div>
 
-<!-- Manhwa pages -->
-<img src="c19p1.jpg" alt="Page 1">
-<img src="c19p2.jpg" alt="Page 2">
-<img src="c19p3.jpg" alt="Page 3">
-<img src="c19p4.jpg" alt="Page 4">
-<img src="c19p5.jpg" alt="Page 5">
-<img src="c19p6.jpg" alt="Page 6">
-<img src="c19p7.jpg" alt="Page 7">
-<img src="c19p8.jpg" alt="Page 8">
-<img src="c19p9.jpg" alt="Page 9">
-<img src="c19p10.jpg" alt="Page 10">
-<img src="c19p11.jpg" alt="Page 11">
-<img src="c19p12.jpg" alt="Page 12">
-<img src="c19p13.jpg" alt="Page 13">
-<img src="c19p14.jpg" alt="Page 14">
-<img src="c19p15.jpg" alt="Page 15">
-<img src="c19p16.jpg" alt="Page 16">
-<img src="c19p17.jpg" alt="Page 17">
-<img src="c19p18.jpg" alt="Page 18">
-<img src="c19p19.jpg" alt="Page 19">
-<img src="c19p20.jpg" alt="Page 20">
-<img src="c19p21.jpg" alt="Page 21">
-<img src="don.jpg" alt="Page 0">
+    <!-- Chapter Jump Dropdown -->
+    <div class="chapter-jump">
+      <label for="chapters">Go to Chapter:</label>
+      <select id="chapters" onchange="jumpToChapter(this.value)">
+        <option value="">Select Chapter</option>
+        <option value="chapter16.html">Chapter 16</option>
+        <option value="chapter17.html">Chapter 17</option>
+        <option value="chapter18.html">Chapter 18</option>
+        <option value="chapter19.html" selected>Chapter 19</option>
+        <option value="chapter20.html">Chapter 20</option>
+        <option value="chapter21.html">Chapter 21</option>
+      </select>
+    </div>
 
+    <!-- Manhwa pages -->
+    <img src="c19p1.jpg" alt="Page 1">
+    <img src="c19p2.jpg" alt="Page 2">
+    <img src="c19p3.jpg" alt="Page 3">
+    <img src="c19p4.jpg" alt="Page 4">
+    <img src="c19p5.jpg" alt="Page 5">
+    <img src="c19p6.jpg" alt="Page 6">
+    <img src="c19p7.jpg" alt="Page 7">
+    <img src="c19p8.jpg" alt="Page 8">
+    <img src="c19p9.jpg" alt="Page 9">
+    <img src="c19p10.jpg" alt="Page 10">
+    <img src="c19p11.jpg" alt="Page 11">
+    <img src="c19p12.jpg" alt="Page 12">
+    <img src="c19p13.jpg" alt="Page 13">
+    <img src="c19p14.jpg" alt="Page 14">
+    <img src="c19p15.jpg" alt="Page 15">
+    <img src="c19p16.jpg" alt="Page 16">
+    <img src="c19p17.jpg" alt="Page 17">
+    <img src="c19p18.jpg" alt="Page 18">
+    <img src="c19p19.jpg" alt="Page 19">
+    <img src="c19p20.jpg" alt="Page 20">
+    <img src="c19p21.jpg" alt="Page 21">
+    <img src="don.jpg" alt="Page 0">
+
+    <!-- Bottom Navigation -->
+    <div class="nav">
+      <a href="chapter18.html">⬅ Prev</a>
+      <a href="chapter20.html">Next ➡</a>
+    </div>
   </div>
 
-  <div class="nav">
-    <a href="chapter18.html">⬅ Prev</a>
-    <a href="chapter20.html">Next ➡</a>
-  </div>
+  <!-- Chapter Jump Script -->
+  <script>
+    function jumpToChapter(chapterUrl) {
+      if (chapterUrl) {
+        window.location.href = chapterUrl;
+      }
+    }
+  </script>
 </body>
 </html>
