@@ -65,12 +65,6 @@
       <label for="chapters">Go to Chapter:</label>
       <select id="chapters" onchange="jumpToChapter(this.value)">
         <option value="">Select Chapter</option>
-        <option value="chapter16.html">Chapter 16</option>
-        <option value="chapter17.html">Chapter 17</option>
-        <option value="chapter18.html">Chapter 18</option>
-        <option value="chapter19.html" selected>Chapter 19</option>
-        <option value="chapter20.html">Chapter 20</option>
-        <option value="chapter21.html">Chapter 21</option>
       </select>
     </div>
 
@@ -107,6 +101,25 @@
 
   <!-- Chapter Jump Script -->
   <script>
+    const select = document.getElementById('chapters');
+    const currentChapter = 19; // Current chapter number
+    const totalChapters = 290;
+
+    // Chapter 0 (index.html)
+    let option0 = document.createElement('option');
+    option0.value = 'index.html';
+    option0.text = 'Chapter 0';
+    select.appendChild(option0);
+
+    // Chapters 1–290
+    for (let i = 1; i <= totalChapters; i++) {
+      let option = document.createElement('option');
+      option.value = 'chapter' + i + '.html';
+      option.text = 'Chapter ' + i;
+      if (i === currentChapter) option.selected = true; // mark current chapter
+      select.appendChild(option);
+    }
+
     function jumpToChapter(chapterUrl) {
       if (chapterUrl) {
         window.location.href = chapterUrl;
