@@ -100,5 +100,34 @@
     <a href="chapter2.html">⬅ Prev</a>
     <a href="chapter4.html">Next ➡</a>
   </div>
+
+  <!-- Chapter Jump Script -->
+  <script>
+    const select = document.getElementById('chapters');
+    const currentChapter = 3; // Current chapter number
+    const totalChapters = 290;
+
+    // Chapter 0 (index.html)
+    let option0 = document.createElement('option');
+    option0.value = 'index.html';
+    option0.text = 'Chapter 0';
+    select.appendChild(option0);
+
+    // Chapters 1–290
+    for (let i = 1; i <= totalChapters; i++) {
+      let option = document.createElement('option');
+      option.value = 'chapter' + i + '.html';
+      option.text = 'Chapter ' + i;
+      if (i === currentChapter) option.selected = true;
+      select.appendChild(option);
+    }
+
+    function jumpToChapter(chapterUrl) {
+      if (chapterUrl) {
+        window.location.href = chapterUrl;
+      }
+    }
+  </script>
+  
 </body>
 </html>
